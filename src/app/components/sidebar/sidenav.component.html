@@ -1,0 +1,44 @@
+<mat-toolbar class="sidenav mat-elevation-z6 zindex2">
+  <div class="flex-align">
+    <mat-icon (click)="toogleSidenav()" class="button-pointer">menu</mat-icon>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg" />
+  </div>
+  <div>
+    <button mat-button [matMenuTriggerFor]="menu">
+      <mat-icon role="img" aria-hidden="true" data-mat-icon-type="font">format_color_fill</mat-icon>
+      Tema
+    </button>
+    <mat-menu #menu="matMenu">
+      <button (click)="changeTheme('amarelo')" mat-menu-item>Amarelo</button>
+      <button (click)="changeTheme('branco')" mat-menu-item>Branco</button>
+      <button (click)="changeTheme('preto')" mat-menu-item>Preto</button>
+      <button (click)="changeTheme('rosa')" mat-menu-item>Rosa</button>
+    </mat-menu>
+    <span class="off-option">Padrão</span>
+    <mat-slide-toggle (change)="changeSkin($event)" [checked]="isShiny" aria-hidden="true" color="warn">Brilhante</mat-slide-toggle>
+  </div>
+  </mat-toolbar>
+  
+  <mat-sidenav-container autosize>
+    <mat-sidenav #sidenav mode="side" class="sidenav" [ngStyle]="{ 'width.em': sidenavWidth }" [opened]="true">
+      <mat-nav-list>
+        <mat-list-item routerLink="home" routerLinkActive="active">
+          <mat-icon mat-list-icon class="text-white">home</mat-icon>
+          <div fxFlex="10"></div>
+          <div *ngIf="sidenavWidth > 6" class="sidenav-item">
+            <h5>Pokémons</h5>
+          </div>
+        </mat-list-item>
+        <mat-list-item routerLink="about" routerLinkActive="active">
+          <mat-icon mat-list-icon class="text-white">face</mat-icon>
+          <div fxFlex="10"></div>
+          <div *ngIf="sidenavWidth > 6" class="sidenav-item">
+            <h5>Sobre o Teste</h5>
+          </div>
+        </mat-list-item>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="sidenav-content {{themeClass()}}">
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>

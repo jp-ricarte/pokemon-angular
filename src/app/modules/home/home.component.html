@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="button-page">
+        <button *ngIf="current != 0" (click)="previousPage()" mat-raised-button color="secondary">Anterior</button>
+        <button *ngIf="current == 0" (click)="previousPage()" mat-raised-button disabled color="secondary">Anterior</button>
+        <button (click)="nextPage()" mat-raised-button color="secondary">Próximo</button>
+    </div>
+    <div class="flexbox">
+        <mat-card *ngFor="let pokemon of pokemons">
+            <h3><strong>{{pokemon.name}}</strong></h3>
+            <div (click)="changePosition(pokemon)">
+                <ng-container *ngIf="pokemon.isFront"> 
+                    <img *ngIf="skin() == 'false'" src="{{pokemon.sprites.versions['generation-v']['black-white'].animated['front_default']}}" />
+                    <img *ngIf="skin() == 'true'" src="{{pokemon.sprites.versions['generation-v']['black-white'].animated['front_shiny']}}" />
+                </ng-container>
+                <ng-container *ngIf="!pokemon.isFront"> 
+                    <img *ngIf="skin() == 'false'" src="{{pokemon.sprites.versions['generation-v']['black-white'].animated['back_default']}}" />
+                    <img *ngIf="skin() == 'true'" src="{{pokemon.sprites.versions['generation-v']['black-white'].animated['back_shiny']}}" />
+                </ng-container>
+            </div>
+            
+            <mat-chip-list>
+                <mat-chip color="primary" selected *ngFor="let power of pokemon.types">
+                    {{power.type.name }}
+                </mat-chip>
+                <!-- <mat-list-item>{{power.type.name }}</mat-list-item> -->
+            </mat-chip-list>
+        </mat-card>
+    </div>
+    <div class="button-page">
+        <button *ngIf="current != 0" (click)="previousPage()" mat-raised-button color="secondary">Anterior</button>
+        <button *ngIf="current == 0" (click)="previousPage()" disabled mat-raised-button color="secondary">Anterior</button>
+        <button (click)="nextPage()" mat-raised-button color="secondary">Próximo</button>
+    </div>
+</div>
