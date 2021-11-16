@@ -16,6 +16,7 @@ import { MatMenuModule } from  '@angular/material/menu';
 import { MatChipsModule } from  '@angular/material/chips';
 import { MatSlideToggleModule } from  '@angular/material/slide-toggle';
 import { HomeComponent } from './modules/home/home.component';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { HomeComponent } from './modules/home/home.component';
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
+    NgxSkeletonLoaderModule,
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,

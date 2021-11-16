@@ -1,8 +1,5 @@
 
 .sidenav-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   padding-top: 10px;
 }
 
@@ -59,12 +56,20 @@ md-icon{
 img {
   width: 150px;
 }
+
+mat-toolbar {
+  height: 64px;
+}
+
+mat-sidenav-container {
+  height: calc(100% - 64px);
+}
+
 @media only screen and (max-width: 460px) {
     img {
       width: 0;
     }
 }
-
 
 mat-slide-toggle {
   font-size: 14px;

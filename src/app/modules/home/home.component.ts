@@ -14,7 +14,6 @@ export class HomeComponent implements OnInit {
     public idsBack = JSON.parse(localStorage.getItem('idsBack')) || [];
     public current = 0;
     public isFront = true;
-    //public skin = localStorage.getItem('isShiny') || 'false';
 
     constructor(
        public service: PokemonService
@@ -74,12 +73,12 @@ export class HomeComponent implements OnInit {
     }
 
     public nextPage() {
-        this.current += 10
+        this.current += 10;
         this.pokemonList();
     }
 
     public previousPage() {
-        this.current -= 10
+        this.current -= 10;
         this.pokemonList();
     }
 }
