@@ -1,6 +1,6 @@
 # Pokémon Angular
 
-![image info](/home/jpricarte/Pictures/pokemon.png)
+![image info](https://res.cloudinary.com/ddqeryaks/image/upload/v1637936775/api/bhaynkdsx0qiaej3jh4t.png)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.1.
 
