@@ -1,4 +1,6 @@
-# TestePris
+# Pokémon Angular
+
+![image info](/home/jpricarte/Pictures/pokemon.png)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.1.
 
